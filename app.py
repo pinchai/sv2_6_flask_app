@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from product import product
+from product import  products as pr
 
 app = Flask(__name__)
 
@@ -7,16 +7,16 @@ app = Flask(__name__)
 @app.get('/')
 @app.get('/home')
 def home():
-    return render_template('front/index.html')
+    return render_template('front/index.html', products=pr)
 
 
 @app.get('/products')
 def products():
-    return render_template('front/products.html')
+    return render_template('front/products.html', products=pr)
 
 
-@app.get('/product')
-def product():
+@app.get('/product/<product_id>')
+def product(product_id):
     return render_template('front/product.html')
 
 
