@@ -66,8 +66,10 @@
                             <p class="product-meta">{{ product.category }}</p>
                             <h3 class="h5 product-name">{{ product.title }}</h3>
                             <p class="price">${{ product.price }}</p>
-<!--                            <a class="btn btn-teal w-100" href="{{ url_for('product', pro_id=product.id) }}">View product</a>-->
-                            <a class="btn btn-teal w-100" href="/product/12">View product</a>
+                            <a
+                                    class="btn btn-teal w-100"
+                                    href="{{ url_for('product', product_id=product.id) }}"
+                            >View product</a>
                         </div>
                     </div>`
                 </div>
