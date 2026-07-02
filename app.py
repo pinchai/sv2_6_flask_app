@@ -83,5 +83,17 @@ def create_user():
     return render_template('front/create-user.html')
 
 
+@app.get('/admin/dashboard')
+def dashboard():
+    module = 'dashboard'
+    return render_template('admin/dashboard/dashboard.html', module=module)
+
+@app.get('/admin/user')
+def user():
+    module = 'user'
+    return render_template('admin/user/user.html', module=module)
+
+
+
 if __name__ == '__main__':
     app.run()
